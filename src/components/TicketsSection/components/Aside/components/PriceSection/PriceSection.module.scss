@@ -1,0 +1,28 @@
+@import '/src/utils/global.module.scss';
+
+.title {
+  @extend .paragraph2;
+  color: $brand-color-black;
+  margin-bottom: 12px;
+}
+
+.priceTag {
+  padding: 8px;
+  width: 48%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+  margin: 2px;
+
+  .text {
+    @extend .paragraph3;
+  }
+}
+
+.checked {
+  background-color: $brand-color-blue;
+
+  .text {
+    color: $gray-00;
+  }
+}

@@ -1,0 +1,50 @@
+@import '/src/utils/global.module.scss';
+
+.common {
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+
+.large {
+  padding: 16px 35px;
+  height: 58px;
+}
+
+.primary {
+  background-color: $brand-color-blue;
+  border: 1px solid $brand-color-blue;
+  @extend .common;
+
+  .typography {
+    font-family: 'Circular';
+    font-size: 16px;
+    color: $gray-00;
+  }
+
+  svg {
+    color: black;
+  }
+}
+
+.secondary {
+  background-color: $gray-00;
+  border: 1px solid $brand-color-blue;
+  @extend .common;
+
+  .typography {
+    font-family: 'Circular';
+    font-size: 16px;
+    color: $brand-color-blue;
+  }
+
+  span {
+    svg {
+      color: $brand-color-blue;
+      font-size: 20px
+    }
+  }
+}
+

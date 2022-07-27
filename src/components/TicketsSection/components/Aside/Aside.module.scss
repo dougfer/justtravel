@@ -1,0 +1,19 @@
+@import '/src/utils/global.module.scss';
+
+.container {
+  @extend .shadow-s;
+  background-color: $gray-00;
+  padding: 24px;
+  // flex: 0 0 350px;
+
+  .ant-layout-sider {
+    max-width: 500px;
+    flex: 0 0 500px;
+  }
+}
+
+
+.title {
+  @extend .Heading-2;
+  color: $brand-color-black;
+}

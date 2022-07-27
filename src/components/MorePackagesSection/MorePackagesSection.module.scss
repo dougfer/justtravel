@@ -1,0 +1,15 @@
+@import '/src/utils/global.module.scss';
+
+.section {
+  background-color: $brand-color-blue;
+  display: flex;
+  align-items: center;
+  padding: 0 100px 0 60px;
+  justify-content: space-between;
+}
+
+.text {
+  @extend .Heading-3;
+  color: $gray-00;
+  margin-left: 24px;
+}

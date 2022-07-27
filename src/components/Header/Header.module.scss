@@ -1,0 +1,15 @@
+@import '/src/utils/global.module.scss';
+
+.header {
+  padding: 24px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $gray-00;
+  line-height: 0;
+}
+
+.sideInformation {
+  display: flex;
+  align-items: center;
+}

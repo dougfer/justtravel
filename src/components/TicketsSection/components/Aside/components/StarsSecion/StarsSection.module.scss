@@ -1,0 +1,36 @@
+@import '/src/utils/global.module.scss';
+
+.title {
+  @extend .paragraph2;
+  color: $brand-color-black;
+  margin-bottom: 12px;
+}
+
+.starCard {
+  width: auto;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  margin: 4px;
+  transition: none;
+  border: 1px solid $gray-10;
+
+  :focus, :active {
+    border: 1px solid $support-03;
+  }
+
+  .star {
+    font-size: 24px;
+    color: $support-03;
+    pointer-events: none;
+  }
+
+  .starNumber {
+    margin-left: 2px;
+    pointer-events: none;
+  }
+}
+
+.checked {
+  border: 1px solid $support-03;
+}
