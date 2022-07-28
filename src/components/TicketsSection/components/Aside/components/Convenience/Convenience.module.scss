@@ -1,0 +1,22 @@
+@import '/src/utils/global.module.scss';
+
+.title {
+  @extend .paragraph2;
+  color: $brand-color-black;
+  margin-bottom: 12px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  
+  .ant-checkbox, span {
+    border-color: $gray-40;
+  }
+
+  span {
+    @extend .paragraph3;
+    color: $gray-100;
+
+  }
+}

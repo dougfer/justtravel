@@ -1,0 +1,34 @@
+@import '/src/utils/global.module.scss';
+
+.title {
+  @extend .paragraph2;
+  color: $brand-color-black;
+  margin-bottom: 12px;
+}
+
+.property {
+  display: flex;
+  width: 70%;
+  padding: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+  border: 1px solid $gray-10;
+  cursor: pointer;
+
+  svg {
+    color: red;
+  }
+
+  .label {
+    @extend .paragraph3;
+    margin-left: 10px;
+  }
+}
+
+.checked {
+  border: 1px solid $brand-color-blue;
+
+  .label {
+    color: $brand-color-blue;
+  }
+}

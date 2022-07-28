@@ -1,0 +1,64 @@
+@import '/src/utils/global.module.scss';
+
+.header {
+  background-color: $gray-00;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 60px;
+  height: auto;
+
+  .textInput {
+    width: 343px;
+    padding: 12px 0;
+  }
+
+  .dateInput {
+    padding: 12px 12px;
+  }
+
+  .button {
+    height: auto;
+    padding: 14px;
+    width: 100%;
+
+    svg {
+      width: 24px;
+      color: $gray-20;
+    }
+  }
+
+  .layoutShift {
+    border-radius: 2px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid $gray-30;
+
+    div {
+      padding: 0;
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        color: $gray-30;
+      }
+    }
+  }
+
+  .checked {
+    border: 1px solid $brand-color-blue;
+
+    div {
+      svg {
+        color: $brand-color-blue;
+      }
+    }
+
+  }
+}

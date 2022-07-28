@@ -10,7 +10,6 @@ import { QuestionCircleOutlined, UserOutlined } from '@ant-design/icons'
 export const Header: React.FC = () => {
   const { Header: AntdHeader } = Layout
   return (
-    <>
       <AntdHeader className={Styles.header}>
         <Logo /> {/*FIX ME LATER*/}
         <Space size='large' className={Styles.sideInformation}>
@@ -21,6 +20,5 @@ export const Header: React.FC = () => {
           <UserOutlined style={{ fontSize: '24px' }} />
         </Space>
       </AntdHeader>
-    </>
   )
 }
