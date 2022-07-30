@@ -2,16 +2,16 @@ import React from 'react'
 import { Button as AntdButton, ButtonProps as AntdButtonProps, Typography } from 'antd'
 import Styles from './Button.module.scss'
 
-type ButtonProps = AntdButtonProps & {
+type ButtonProps = {
   btnType: 'primary' | 'secondary'
   Icon?: JSX.Element
   btnSize?: 'large' | 'medium' | 'small'  
-}
+} & AntdButtonProps
 
 export const Button: React.FC<ButtonProps> = ({ children, btnType, Icon, btnSize, ...rest }) => {
 
   const style = {
-    primary: Styles.primaary,
+    primary: Styles.primary,
     secondary: Styles.secondary
   }
 

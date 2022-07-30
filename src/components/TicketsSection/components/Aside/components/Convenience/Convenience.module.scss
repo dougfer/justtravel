@@ -1,7 +1,7 @@
 @import '/src/utils/global.module.scss';
 
 .title {
-  @extend .paragraph2;
+  @extend .paragraph-2;
   color: $brand-color-black;
   margin-bottom: 12px;
 }
@@ -15,7 +15,7 @@
   }
 
   span {
-    @extend .paragraph3;
+    @extend .paragraph-3;
     color: $gray-100;
 
   }

@@ -1,24 +1,29 @@
-import React, { useEffect } from 'react'
-import { Space } from 'antd'
+import React from 'react'
+import { Space, Image } from 'antd'
 import Styles from './TicketList.module.scss'
-import { getTicketsList } from 'src/service'
+import { useAppDispatch, useAppSelector } from 'src/store/hooks'
+import { useGetTravelList } from 'src/service/travel'
+import { TravelCard } from './components'
 
 export const TicketList: React.FC = () => {
 
+  const { data, isLoading } = useGetTravelList()
+  
+  const list = useAppSelector((state) => state.travels)
 
-  const getList = async () => {
-    const result = await getTicketsList()
+  const dispatch = useAppDispatch()
 
-    console.log(result)
-  }
+  // const { isLoading, isError } = useQuery(['getTravelList'], getTicketsList, {
+  //   onSuccess: ({ data }) => dispatch(incrementList(data))
+  // })
 
-  useEffect(() => {
-    getList()
-  }, [])
+  // console.log(list)
 
   return (
-    <Space className={Styles.container}>
-      oioioi
-    </Space>
+    <div className={Styles.container}>
+      <Image.PreviewGroup>
+        {data && data.map((travel) => <TravelCard key={travel.id} travel={travel} />)}
+      </Image.PreviewGroup>
+    </div>
   )
 }

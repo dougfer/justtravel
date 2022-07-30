@@ -13,42 +13,46 @@ $gray-30: #B6BCC9;
 
 $gray-40: #9EA5B8;
 
+$gray-50: #858FA6;
+
 $gray-100: #0B1F4D;
 
 $support-03: #FFAD0D;
 
-.paragraph4 {
+$support-05: #3C4C70;
+
+.paragraph-4 {
   font-family: 'Circular Book';
   letter-spacing: 0;
   line-height: 22px;
-  font-size: 16px;
+  font-size: 12px;
 }
 
-.paragraph2 {
+.paragraph-2 {
   font-family: 'Circular Book';
   letter-spacing: 0;
   line-height: 16px;
   font-size: 16px;
 }
 
-.paragraph3 {
+.paragraph-3 {
   font-family: 'Circular Book';
   letter-spacing: 0;
   line-height: 18px;
   font-size: 14px;
 }
 
-.Heading-2 {
+.heading-2 {
   font-family: 'Circular Bold';
-  letter-spacing: -1;
+  letter-spacing: -1px;
   line-height: 30px;
   font-size: 24px;
 }
 
-.Heading-3 {
+.heading-3 {
   font-family: 'Circular Medium';
+  letter-spacing: 0;
   font-style: normal;
-  font-weight: 500;
   font-size: 22px;
   line-height: 30px;
 }

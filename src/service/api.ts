@@ -26,7 +26,7 @@ export const getTicketsList = async (): Promise<Response<Ticket[]>> => {
       method: 'GET',
       url: 'https://62d085741cc14f8c088b8a7b.mockapi.io/api/v1/ticket'
     })
-
+    console.log('fui chamado', new Date())
     return response
   } catch (err: any) {
     return err

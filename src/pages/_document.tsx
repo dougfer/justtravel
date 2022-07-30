@@ -6,6 +6,7 @@ export default function Document() {
     <Html>
       <Head>
         <link href='/fonts/FontFace.css' rel='stylesheet' />
+        <title>Testinho</title>
       </Head>
       <body>
         <Main />
