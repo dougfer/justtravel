@@ -15,17 +15,21 @@ $gray-40: #9EA5B8;
 
 $gray-50: #858FA6;
 
+$gray-70: #556282;
+
 $gray-100: #0B1F4D;
 
 $support-03: #FFAD0D;
 
+$support-02: #0BB07B;
+
 $support-05: #3C4C70;
 
-.paragraph-4 {
+.paragraph-1 {
   font-family: 'Circular Book';
   letter-spacing: 0;
-  line-height: 22px;
-  font-size: 12px;
+  line-height: 26px;
+  font-size: 20px;
 }
 
 .paragraph-2 {
@@ -40,6 +44,20 @@ $support-05: #3C4C70;
   letter-spacing: 0;
   line-height: 18px;
   font-size: 14px;
+}
+
+.paragraph-4 {
+  font-family: 'Circular Book';
+  letter-spacing: 0;
+  line-height: 22px;
+  font-size: 12px;
+}
+
+.heading-1 {
+  font-family: 'Circular Bold';
+  letter-spacing: -2px;
+  line-height: 45px;
+  font-size: 40px;
 }
 
 .heading-2 {

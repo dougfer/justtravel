@@ -1,0 +1,27 @@
+@import '/src/utils/global.module.scss';
+
+.container {
+  padding: 95px 60px;
+
+  .title {
+    @extend .heading-1;
+    color: $brand-color-black;
+  }
+
+  .subtitle {
+    @extend .paragraph-1;
+    color: $gray-70;
+    margin-top: 17px;
+    margin-bottom: 35px;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      @extend .paragraph-1;
+      color: $brand-color-black;
+    }
+  }
+}

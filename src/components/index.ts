@@ -1,4 +1,7 @@
 export * from './Header'
 export * from './Button'
+export * from './Footer'
+export * from './JustTravelInfo'
 export * from './TicketsSection'
 export * from './MorePackagesSection'
+export * from './BrazilDestinationsSection'

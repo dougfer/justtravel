@@ -2,12 +2,12 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Divider, Layout, PageHeader } from 'antd'
-import { Header, MorePackagesSection, TicketsSection } from 'src/components'
+import { Divider, Layout, PageHeader, Space, Typography } from 'antd'
+import { Header, MorePackagesSection, TicketsSection, BrazilDestinationsSection, JustTravelInfo, Footer } from 'src/components'
 
 const Home: NextPage = () => {
 
-  const { Footer, Sider, Content } = Layout
+  const { Footer: AntdFooter, Sider, Content } = Layout
 
   return (
     <>
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
             scroll-behavior: smooth;
           }
         `}</style>
+        <title>Home</title>
       </Head>
       <Layout>
         <Header />
@@ -24,8 +25,12 @@ const Home: NextPage = () => {
           <Divider style={{ margin: 0 }} />
           <TicketsSection />
           <MorePackagesSection />
+          <BrazilDestinationsSection />
         </Content>
-        <div>Footer</div>
+        <AntdFooter style={{ padding: 0 }}>
+          <JustTravelInfo />
+          <Footer />
+        </AntdFooter>
       </Layout>
     </>
   )

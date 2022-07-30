@@ -1,0 +1,18 @@
+@import '/src/utils/global.module.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 34px 62px;
+  background-color: $support-02;
+  align-items: center;
+
+  article {
+    @extend .paragraph-3;
+    color: $gray-00;
+  }
+
+  div {
+    display: flex;
+  }
+}
