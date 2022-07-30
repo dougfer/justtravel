@@ -10,15 +10,24 @@ const Home: NextPage = () => {
   const { Footer, Sider, Content } = Layout
 
   return (
-    <Layout>
-      <Header />
-      <Content>
-        <Divider style={{ margin: 0 }} />
-        <TicketsSection />
-        <MorePackagesSection />
-      </Content>
-      <div>Footer</div>
-    </Layout>
+    <>
+      <Head>
+        <style>{`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}</style>
+      </Head>
+      <Layout>
+        <Header />
+        <Content>
+          <Divider style={{ margin: 0 }} />
+          <TicketsSection />
+          <MorePackagesSection />
+        </Content>
+        <div>Footer</div>
+      </Layout>
+    </>
   )
 }
 

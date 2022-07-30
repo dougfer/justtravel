@@ -10,7 +10,9 @@ export const TicketsSection: React.FC = () => {
     <Layout>
       <HeaderForm />
       <Layout hasSider className={Styles.mainSection}>
-        <Aside />
+        <Sider width={370} style={{ backgroundColor: 'transparent' }}>
+          <Aside />
+        </Sider>
         <Content>
           <TicketList />
         </Content>

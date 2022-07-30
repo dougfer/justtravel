@@ -12,13 +12,13 @@ export const Aside: React.FC = () => {
   return (
     <Sider className={Styles.container} width={370}>
       <Typography className={Styles.title}>Filtro</Typography>
-        <Divider />
+      <Divider />
       <PriceSection />
-        <Divider />
+      <Divider />
       <StarsSecion />
-        <Divider />
+      <Divider />
       <Convenience />
-        <Divider />
+      <Divider />
       <PropertyTypes />
     </Sider>
   )

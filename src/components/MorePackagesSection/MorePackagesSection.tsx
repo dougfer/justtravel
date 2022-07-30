@@ -6,6 +6,11 @@ import { Button } from 'src/components'
 import { ArrowRightOutlined } from '@ant-design/icons'
 
 export const MorePackagesSection: React.FC = () => {
+
+  const handleClick = () => {
+    window.alert('Conhecer mais pacotes')
+  }
+
   return (
     <div className={Styles.section}>
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -15,7 +20,7 @@ export const MorePackagesSection: React.FC = () => {
           Descubra o seu próximo destino por um precinho que só o lorem tem.
         </Typography>
       </div>
-      <Button btnType='secondary' btnSize='large' icon={<ArrowRightOutlined/>}>Conhecer mais pocotes</Button>
+      <Button btnType='secondary' btnSize='large' onClick={handleClick} icon={<ArrowRightOutlined/>}>Conhecer mais pocotes</Button>
     </div>
   )
 }

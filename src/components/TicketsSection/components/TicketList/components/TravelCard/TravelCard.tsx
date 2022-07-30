@@ -7,7 +7,7 @@ import { Button } from 'src/components/Button'
 import { formatToRealStr } from 'src/utils/formatToRealString'
 
 type TravelCardProps = {
-  travel: Ticket
+  travel: Ticket,
 }
 
 export const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
@@ -56,9 +56,7 @@ export const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
             </Button>
           </Space>
         </Card>
-
       </div>
-
     </div>
   )
 }

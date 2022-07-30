@@ -1,20 +1,30 @@
 import React, { useState } from 'react'
-import { Typography, Row, Col, Radio, Card } from 'antd'
+import { Typography, Card } from 'antd'
 import Styles from './PriceSection.module.scss'
 
 export const PriceSection: React.FC = () => {
 
-  const [selectedPrice, setSelectedPrice] = useState<string>('')
+  const [selectedPrice, setSelectedPrice] = useState<number>()
 
-  const priceRange = ['R$10,00 - R$390,00', 'R$390,00 - R$600,00', 'R$600,00 - R$800,00', 'R$800,00 - R$1000,00']
+  const priceRange = [
+    {value: 10.00, label: 'R$10,00 - R$390,00'},
+    {value: 20.00, label: 'R$10,00 - R$390,00'},
+    {value: 30.00, label: 'R$10,00 - R$390,00'},
+    {value: 40.00, label: 'R$10,00 - R$390,00'},
+  ]
 
   return (
-    <div style={{ width: '100%' }}>
+    <div>
       <Typography className={Styles.title}>Preço</Typography>
       <Card bordered={false}>
         {priceRange.map((price, index) => 
-          <Card.Grid onClick={() => setSelectedPrice(price)} className={`${Styles.priceTag} ${selectedPrice === price && Styles.checked}`} key={index} hoverable={false}>
-            <Typography className={Styles.text}>{price}</Typography>
+          <Card.Grid 
+            onClick={() => setSelectedPrice(price.value)} 
+            className={`${Styles.priceTag} ${selectedPrice === price.value && Styles.checked}`} 
+            key={index} 
+            hoverable={false}
+          >
+            <Typography className={Styles.text}>{price.label}</Typography>
           </Card.Grid>)}
       </Card>
     </div>
