@@ -1,29 +1,49 @@
-import React from 'react'
-import { Card, Space, Image, Typography, Divider } from 'antd'
+import React, { useState } from 'react'
 import { Ticket } from 'src/service'
+import { useRouter } from 'next/router'
 import Styles from './TravelCard.module.scss'
-import { ArrowRightOutlined, EnvironmentOutlined } from '@ant-design/icons'
 import { Button } from 'src/components/Button'
+import { Card, Space, Typography, Divider } from 'antd'
 import { formatToRealStr } from 'src/utils/formatToRealString'
+import { ArrowRightOutlined, EnvironmentOutlined, HeartFilled, HeartOutlined } from '@ant-design/icons'
 
 type TravelCardProps = {
   travel: Ticket,
 }
 
 export const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
+  const [markedFavorite, setMarkedFavorite] = useState(false)
 
+  const router = useRouter()
+
+  const handleFavorite = () => {
+    setMarkedFavorite(!markedFavorite)
+  }
+
+  const handleRedirect = () => {
+    router.push(`travel/${travel.id}`)
+  }
+
+  const heartIconStyles = {
+    color: '#FFFFFF', 
+    fontSize: '24px', 
+    cursor: 'pointer'
+  }
 
   return (
     <div className={Styles.container}>
-      {/* <Card className={Styles.image} style={{ backgroundImage: `url(${travel.images})` }} >
-      </Card> */}
-      <Image 
+      <div
+        style={{ backgroundImage: `url(${travel.images})` }}
         className={Styles.image}
-        loading='lazy'
-        height={233}
-        src={`${travel.images}?x-oss-process=image/blur,r_50,s_50/quality,q_1/resize,m_mfit,h_200,w_200`}
-        preview={false}
-      />
+      >
+        <div>
+          <Typography.Link onClick={handleRedirect}>Ingresso</Typography.Link>
+          {markedFavorite ? 
+            <HeartFilled onClick={handleFavorite} style={{...heartIconStyles}} /> 
+            : <HeartOutlined onClick={handleFavorite} style={{...heartIconStyles}} /> 
+          }
+        </div>
+      </div>
       <div className={Styles.infoContent}>
         <Card bordered={false} className={Styles.travelInfo}>
           <Typography className={Styles.name}>
@@ -51,7 +71,7 @@ export const TravelCard: React.FC<TravelCardProps> = ({ travel }) => {
                 <Typography className={Styles.priceAfterValue}>{formatToRealStr(Number(travel.price)).slice(2)}</Typography>
               </div>
             </div>
-            <Button btnType='primary' icon={<ArrowRightOutlined />}>
+            <Button onClick={handleRedirect} btnType='primary' icon={<ArrowRightOutlined />}>
               Saber mais
             </Button>
           </Space>

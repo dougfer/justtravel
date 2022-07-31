@@ -8,27 +8,35 @@
   margin-bottom: 20px;
   @extend .shadow-s;
   padding: 0;
-
-  // display: flex;
-  // flex: 1;
-  // flex-direction: row;
-
 }
 
 .image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-width: 213px;
+  width: 200px;
   height: 233px;
-  
+  background-size: cover;
+
+  div {
+    display: flex;
+    padding: 14px;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      @extend .paragraph-4;
+      padding: 4px 12px;
+      background-color: $gray-00;
+      border-radius: 15px;
+      color: $brand-color-black;
+      cursor: pointer;
+    }
+  }
 }
 
 .infoContent {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 33px 24px 0 24px;
+  padding: 33px 24px 33px 24px;
 }
 
 .travelInfo {
