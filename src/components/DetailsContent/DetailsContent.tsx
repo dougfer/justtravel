@@ -35,7 +35,7 @@ export const DetailsContent: React.FC = () => {
       </Header>
       <Content hasSider>
         <Layout style={{ padding: '37px 60px' }}>
-          <DetailContainer />
+          <DetailContainer location={data.location} />
           <Sider width={370}>
             <DetailsAside />
           </Sider>

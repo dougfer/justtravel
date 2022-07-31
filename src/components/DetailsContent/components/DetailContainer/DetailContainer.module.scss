@@ -67,5 +67,10 @@
       color: $brand-color-black;
     }
   }
+
+  .title {
+    @extend .heading-3;
+    color: $brand-color-black;
+  }
 }
 

@@ -3,7 +3,12 @@ import { Space, Typography } from 'antd'
 import Styles from './DetailContainer.module.scss'
 import { CoffeeOutlined, DingtalkOutlined, HomeOutlined, WifiOutlined } from '@ant-design/icons'
 
-export const DetailContainer: React.FC = () => {
+type DetailContainerProps = {
+  location: string
+}
+
+export const DetailContainer: React.FC<DetailContainerProps> = ({location}) => {
+
   return (
     <div className={Styles.container}>
       <Space className={Styles.reviews}>
@@ -45,6 +50,22 @@ export const DetailContainer: React.FC = () => {
           Vivamus varius gravida urna viverra in. Aliquet amet dictum malesuada sapien morbi est interdum. Tincidunt nunc convallis nullam lorem eu elementum interdum. Ut ultrices suscipit dolor lorem consequat ac nibh justo. Viverra quam nunc risus urna. Pharetra vestibulum diam praesent consequat consequat fermentum nunc.
         </Typography>
       </Space>
+      <div>
+        <Typography className={Styles.title}>Localização</Typography>
+        <iframe
+          width='100%'
+          height="450"
+          loading='lazy'
+          allowFullScreen
+          referrerPolicy='no-referrer-when-downgrade'
+          src={`https://www.google.com/maps/embed/v1/place?key=${process.env.API_KEY}
+            &q=${location}`}>
+        </iframe>
+      </div>
     </div>
   )
 }
+
+// export default GoogleApiWrapper({
+//   apiKey: ('AIzaSyCFtWDnMPM9Ub6YTI0fMdgVFx2cX6CiH1c')
+// })(DetailContainer)
