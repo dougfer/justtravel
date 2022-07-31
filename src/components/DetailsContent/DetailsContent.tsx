@@ -1,35 +1,46 @@
 import React, { useEffect } from 'react'
-import { Layout } from 'antd'
-import { useGetTravelByIdQuery, travelApi } from 'src/service/travel'
+import { Layout, Spin } from 'antd'
+import { travelApi } from 'src/service/travel'
 import { useRouter } from 'next/router'
-import { DetailHeader } from './components'
+import { DetailHeader, DetailContainer, DetailsAside } from './components'
 
 export const DetailsContent: React.FC = () => {
 
-  const { Header, Content, Sider } = Layout
+  const { Header, Content, Sider, Footer } = Layout
 
   const router = useRouter()
   const { id } = router.query
   const travelId = Array.isArray(id) ? id[0] : id
   
-  const [trigger, { data }, lastPromiseInfo] = travelApi.useLazyGetTravelByIdQuery()
-  
+  const [trigger, { data, isLoading }] = travelApi.useLazyGetTravelByIdQuery()
+
   useEffect(() => {
     if(router.isReady && travelId) {
-      console.log('passei aqui')
       trigger(travelId)
     }
   }, [router.isReady, trigger])
 
-  if(!data) {
-    return <div />
+  if(!data || isLoading) {
+    return (
+      <div style={{ height: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+        <Spin size='large' />
+      </div>
+    )
   }
 
   return (
-    <Layout>{/*style={{ padding: '33px 60px 60px 60px' }}*/}
-      <DetailHeader location={data.location} img={data.images} name={data.name}  />
-      <Content>oioioioi</Content>
-
-    </Layout>
+    <>
+      <Header style={{ backgroundColor: 'transparent', alignItems: 'flex-start', padding: 0, height: '100%' }}>
+        <DetailHeader location={data.location} img={data.images} name={data.name}  />
+      </Header>
+      <Content hasSider>
+        <Layout style={{ padding: '37px 60px' }}>
+          <DetailContainer />
+          <Sider width={370}>
+            <DetailsAside />
+          </Sider>
+        </Layout>
+      </Content>
+    </>
   )
 }

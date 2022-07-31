@@ -1,8 +1,10 @@
-import { EnvironmentOutlined, RollbackOutlined } from '@ant-design/icons'
-import { Space, Typography, Layout } from 'antd'
-import { transcode } from 'buffer'
 import React from 'react'
+import { Button } from 'src/components'
+import { Space, Typography, Spin, Layout } from 'antd'
 import Styles from './DetailHeader.module.scss'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { EnvironmentOutlined, RollbackOutlined } from '@ant-design/icons'
 
 type DetailHeaderProps = {
   name: string
@@ -12,16 +14,9 @@ type DetailHeaderProps = {
 
 export const DetailHeader: React.FC<DetailHeaderProps> = ({ img, location, name }) => {
 
+  const imgSrc = img.replace('640', '1280').replace('480', '720')
+  
   const { Header } = Layout
-
-  console.log(img)
-
-  //http://loremflickr.com/640/480/sports
-
-  // const imgSrc = img.replace('640', '1280').replace('480', '720')
-  const imgSrc = img.replace('640', '1920').replace('480', '1080')
-
-  console.log(imgSrc)  
 
   return (
     <div className={Styles.container}>
@@ -37,10 +32,26 @@ export const DetailHeader: React.FC<DetailHeaderProps> = ({ img, location, name 
           </div>
         </Space>
       </div>
-      <div className={Styles.image} style={{ backgroundImage: `url(${imgSrc})` }}>
-
+      <div className={Styles.imageContainer}>
+        <Spin />
+        <LazyLoadImage
+          alt={name}
+          height={450}
+          width='100%'
+          visibleByDefault={true}
+          src={imgSrc}
+          effect='blur'
+          className={Styles.image}
+        />
+        <div className={Styles.buttonContainer} >
+          <Button 
+            btnType='secondary'
+            btnSize='large'
+          >
+            Visualizar mais fotos
+          </Button>
+        </div>
       </div>
-
     </div>
   )
 }

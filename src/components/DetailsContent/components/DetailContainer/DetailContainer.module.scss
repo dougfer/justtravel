@@ -1,0 +1,71 @@
+@import '/src/utils/global.module.scss';
+
+.container {
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 38px;
+
+  .reviews {
+    flex-direction: row;
+    @extend .paragraph-3;
+    align-items: center;
+  
+    :nth-child(1) {
+      div {
+        padding: 10px;
+        background-color: $brand-color-blue;
+        color: $gray-00;
+        border-radius: 2px;
+      }
+    }
+  
+    .avaluation {
+      color: $brand-color-black;
+      margin-right: 5px;
+    }
+  
+    .reviewsNumber {
+      color: $gray-40;
+    }
+  }
+
+  .perks {
+
+    margin: 24px 0 34px 0;
+
+    div {
+      display: flex;
+      align-items: center;
+
+      color: $gray-40;
+      
+      svg {
+        font-size: 18px;
+      }
+
+      article {
+        @extend .paragraph-3;
+        color: $gray-40;
+        margin-left: 5px;
+      }
+
+    }
+  }
+
+  .ticketInfo {
+    margin-bottom: 24px;
+
+    article {
+      color: $gray-40;
+      @extend .paragraph-2;
+    }
+
+    .title {
+      @extend .heading-3;
+      color: $brand-color-black;
+    }
+  }
+}
+

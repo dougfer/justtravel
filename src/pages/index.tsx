@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Divider, Layout, PageHeader, Space, Typography } from 'antd'
 import { Header, MorePackagesSection, TicketsSection, BrazilDestinationsSection, JustTravelInfo, Footer } from 'src/components'
-
+import 'react-lazy-load-image-component/src/effects/blur.css'
 const Home: NextPage = () => {
 
   const { Footer: AntdFooter, Sider, Content } = Layout
