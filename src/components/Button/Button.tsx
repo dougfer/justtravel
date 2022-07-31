@@ -21,8 +21,10 @@ export const Button: React.FC<ButtonProps> = ({ children, btnType, Icon, btnSize
     small: Styles.small
   }
 
+  const type = btnType as any
+
   return (
-    <AntdButton type='primary' className={`${style[btnType]} ${btnSize && size[btnSize]}`} {...rest}>
+    <AntdButton type={type} className={`${style[btnType]} ${btnSize && size[btnSize]}`} {...rest}>
       <Typography className={`${Styles.typography}`}>
         {children}
       </Typography>

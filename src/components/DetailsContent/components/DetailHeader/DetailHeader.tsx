@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from 'src/components'
-import { Space, Typography, Spin, Layout } from 'antd'
+import { Space, Typography, Spin } from 'antd'
 import Styles from './DetailHeader.module.scss'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { EnvironmentOutlined, RollbackOutlined } from '@ant-design/icons'
+import { useRouter } from 'next/router'
 
 type DetailHeaderProps = {
   name: string
@@ -15,22 +16,22 @@ type DetailHeaderProps = {
 export const DetailHeader: React.FC<DetailHeaderProps> = ({ img, location, name }) => {
 
   const imgSrc = img.replace('640', '1280').replace('480', '720')
-  
-  const { Header } = Layout
 
+  const router = useRouter()
+  
   return (
     <div className={Styles.container}>
       <div>
-        <Space align='start' size='middle'>
-          <RollbackOutlined  style={{ fontSize: '24px' }} />
+        <div className={Styles.header}>
+          <RollbackOutlined onClick={() => router.back()} style={{ fontSize: '24px' }} />
           <div>
             <Typography className={Styles.name}>{name}</Typography>
             <Space align='start' className={Styles.location}>
-              <EnvironmentOutlined />
+              <EnvironmentOutlined style={{ marginRight: -10 }} />
               <Typography>{location}</Typography>
             </Space>
           </div>
-        </Space>
+        </div>
       </div>
       <div className={Styles.imageContainer}>
         <Spin />

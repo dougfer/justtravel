@@ -1,15 +1,14 @@
-import React, { useMemo, useState, useRef  } from 'react'
-import { Space, Image, Pagination, PaginationProps } from 'antd'
+import React, { useMemo, useState  } from 'react'
+import { Pagination, PaginationProps, Spin } from 'antd'
 import Styles from './TicketList.module.scss'
-import { useAppDispatch, useAppSelector } from 'src/store/hooks'
 import { useGetTravelList } from 'src/service/travel'
+import { Button } from 'src/components'
 import { TravelCard } from './components'
-import { Ticket } from 'src/service'
 
 export const TicketList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1)
 
-  const { data, isLoading } = useGetTravelList()
+  const { data, isLoading, isError, refetch } = useGetTravelList()
 
   const showTotal: PaginationProps['showTotal'] = total =><p style={{ color: '#828292' }}>{total} Resultados</p>;
 
@@ -30,10 +29,26 @@ export const TicketList: React.FC = () => {
   const onChange: PaginationProps['onChange'] = page => {
     setCurrentPage(page)
     window.scrollTo(0, 0)
-  };
+  }
+
+  if(isError) {
+    return (
+      <div style={{ height: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+        <Button onClick={refetch} btnType='primary' btnSize='large'>Houve um problema, tente novamente!</Button>
+      </div>
+    )
+  }
+  
+  if(isLoading) {
+    return (
+      <div style={{ height: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+        <Spin size='large' />
+      </div>
+    )
+  }
 
   if(data?.length === 0 ){
-    return <div />
+    return <div>Não há passagens disponíveis</div>
   }
   
   return (

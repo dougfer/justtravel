@@ -5,10 +5,7 @@ import { Header, MorePackagesSection, BrazilDestinationsSection, JustTravelInfo,
 
 export default function TravelDetails() {
 
-
-  
-  const { Footer: AntdFooter, Content } = Layout
-
+  const { Footer: AntdFooter } = Layout
 
   return (
     <>

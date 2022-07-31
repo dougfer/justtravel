@@ -19,10 +19,10 @@
     align-items: center;
     margin-bottom: 34px;
 
+
     article {
       @extend .paragraph-3;
       color: $support-05;
-      margin-left: 4px;
     }
   }
 
@@ -46,6 +46,13 @@
     right: 0;
     top: 0;
     padding: 8px;
+  }
+
+  .header {
+    display: flex;
+    :nth-child(1) {
+      margin-right: 10px;
+    }
   }
 }
 

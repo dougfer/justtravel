@@ -4,7 +4,7 @@ import { Aside, HeaderForm, TicketList } from './components'
 import Styles from './TicketsSection.module.scss'
 
 export const TicketsSection: React.FC = () => {
-  const { Header, Sider, Content } = Layout
+  const { Sider, Content } = Layout
 
   return (
     <Layout>
